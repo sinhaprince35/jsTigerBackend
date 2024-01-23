@@ -13,8 +13,18 @@ app.get("/", (req, res) => {
 });
 
 app.post("/upload", async (req, res) => {
-    // console.log(req.body);
-  let data = await User(req.body);
+  // console.log(req.body);
+  const userData = {
+    name: req.body.name,
+    accountNo: req.body.accountNo,
+    bankName: req.body.bankName,
+    address1: req.body.address1,
+    address2: req.body.address2,
+    city: req.body.city,
+    country: req.body.country,
+    zipCode: req.body.zipCode
+};
+  let data = await User(userData);
   await data.save();
   res.send({ message: "Data saved in database" });
 });
