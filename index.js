@@ -24,7 +24,7 @@ app.post("/upload", async (req, res) => {
     country: req.body.country,
     zipCode: req.body.zipCode
 };
-  let data = await User(userData);
+  let data = new User(userData);
   await data.save();
   res.send({ message: "Data saved in database" });
 });
