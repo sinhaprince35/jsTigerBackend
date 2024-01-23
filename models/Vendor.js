@@ -11,4 +11,4 @@ const userSchema = new mongoose.Schema({
   zipCode: "Number",
 });
 
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("users", userSchema);
