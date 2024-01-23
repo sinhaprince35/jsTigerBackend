@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/upload", async (req, res) => {
-  //   console.log(req.body);
+    // console.log(req.body);
   let data = await User(req.body);
   await data.save();
   res.send({ message: "Data saved in database" });
